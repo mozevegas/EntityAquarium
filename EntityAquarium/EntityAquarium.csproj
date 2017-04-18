@@ -32,7 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,11 +49,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContext\AquariumsContext.cs" />
+    <Compile Include="DataContext\AquaticLifesContext.cs" />
+    <Compile Include="DataContext\OceansContext.cs" />
+    <Compile Include="Migrations\201704172334232_FirstVersion.cs" />
+    <Compile Include="Migrations\201704172334232_FirstVersion.Designer.cs">
+      <DependentUpon>201704172334232_FirstVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704172341488_AddAquaLifes.cs" />
+    <Compile Include="Migrations\201704172341488_AddAquaLifes.Designer.cs">
+      <DependentUpon>201704172341488_AddAquaLifes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704172347592_AddForeignKey.cs" />
+    <Compile Include="Migrations\201704172347592_AddForeignKey.Designer.cs">
+      <DependentUpon>201704172347592_AddForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704172359016_LinkLifeandHome.cs" />
+    <Compile Include="Migrations\201704172359016_LinkLifeandHome.Designer.cs">
+      <DependentUpon>201704172359016_LinkLifeandHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704180004377_RenamedModels.cs" />
+    <Compile Include="Migrations\201704180004377_RenamedModels.Designer.cs">
+      <DependentUpon>201704180004377_RenamedModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Aquarium.cs" />
+    <Compile Include="Models\AquaticLife.cs" />
+    <Compile Include="Models\Ocean.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201704172334232_FirstVersion.resx">
+      <DependentUpon>201704172334232_FirstVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704172341488_AddAquaLifes.resx">
+      <DependentUpon>201704172341488_AddAquaLifes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704172347592_AddForeignKey.resx">
+      <DependentUpon>201704172347592_AddForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704172359016_LinkLifeandHome.resx">
+      <DependentUpon>201704172359016_LinkLifeandHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704180004377_RenamedModels.resx">
+      <DependentUpon>201704180004377_RenamedModels.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
